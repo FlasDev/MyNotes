@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">Мои заметки</string>
+
+    <string name="successfully_saved_note_message">Заметка сохранена</string>
+
+    <string name="title_hint">Заголовок</string>
+    <string name="description_hint">Введите заметку</string>
+    <string name="empty_note_message">Заметки не могут быть пустыми</string>
+    <string name="delete_note_message">Заметка была удалена</string>
+    <string name="delete">Удалить</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="empty_note">Заметок нет</string>
+    <string name="notes_search">Поиск</string>
+</resources>
