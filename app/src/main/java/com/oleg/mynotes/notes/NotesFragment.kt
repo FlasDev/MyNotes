@@ -81,9 +81,13 @@ class NotesFragment : Fragment(), NotesContract.View {
         }
     }
 
-    override fun showDeleteNote() {
+    override fun showDeleteNote(note: Note) {
         activity?.runOnUiThread {
-            Snackbar.make(view!!, getString(R.string.delete_note_message), Snackbar.LENGTH_SHORT).show()
+            Snackbar.make(view!!, getString(R.string.delete_note_message), Snackbar.LENGTH_SHORT)
+                    .setAction(getString(R.string.undo_string)) {
+                        actionListener.returnDeletedNote(note)
+                    }
+                    .show()
         }
     }
 
@@ -100,7 +104,8 @@ class NotesFragment : Fragment(), NotesContract.View {
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         if (REQUEST_ADD_NOTE == requestCode && Activity.RESULT_OK == resultCode){
             Snackbar.make(view!!, getString(R.string.successfully_saved_note_message),
-                    Snackbar.LENGTH_SHORT).show()
+                    Snackbar.LENGTH_SHORT)
+                    .show()
         }
 
     }

@@ -12,7 +12,7 @@ class NotesPresenter(val noteRepository: NoteRepository, val notesView: NotesCon
     override fun deleteNote(requestNote: Note) {
         runOnIoThread {
             noteRepository.deleteNote(requestNote)
-            notesView.showDeleteNote()
+            notesView.showDeleteNote(requestNote)
             loadNotes()
         }
 
@@ -50,5 +50,12 @@ class NotesPresenter(val noteRepository: NoteRepository, val notesView: NotesCon
 
     override fun addNewNote() {
         notesView.showAddNote()
+    }
+
+    override fun returnDeletedNote(note: Note) {
+        runOnIoThread {
+            noteRepository.insertNote(note)
+            loadNotes()
+        }
     }
 }

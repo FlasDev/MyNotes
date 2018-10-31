@@ -6,6 +6,10 @@ interface AddNoteContract {
     interface View{
         fun showNotesList()
         fun showEmptyNoteError()
+        fun openDatePicker()
+        fun saveShared()
+        fun loadShared()
+        fun clearShared()
     }
 
     interface UserActionListener{

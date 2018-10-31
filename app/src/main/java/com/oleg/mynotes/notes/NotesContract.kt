@@ -8,7 +8,7 @@ interface NotesContract {
         fun showNotes(note: List<Note>)
         fun showAddNote()
         fun showNoteDetailUi(noteId: Long)
-        fun showDeleteNote()
+        fun showDeleteNote(note: Note)
         fun showEmptyNoteListVisibility(visibility: Int)
     }
 
@@ -18,5 +18,6 @@ interface NotesContract {
         fun openNoteDetail(requestNote: Note)
         fun deleteNote(requestNote: Note)
         fun findNote(title: String)
+        fun returnDeletedNote(note: Note)
     }
 }
